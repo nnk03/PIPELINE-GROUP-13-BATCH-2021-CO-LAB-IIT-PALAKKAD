@@ -1,0 +1,8 @@
+\contentsline {section}{\numberline {1}Problem Statement of Lab 7}{2}{section.1}%
+\contentsline {section}{\numberline {2}Solution}{2}{section.2}%
+\contentsline {section}{\numberline {3}Timing Diagrams}{3}{section.3}%
+\contentsline {section}{\numberline {4}Conclusion}{3}{section.4}%
+\contentsline {section}{\numberline {5}Contributions}{3}{section.5}%
+\contentsline {section}{\numberline {6}Code for Lab 7}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Code for the pipeline}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Code for Testbench}{9}{subsection.6.2}%

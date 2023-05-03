@@ -1,0 +1,96 @@
+\documentclass[15pt, onecolumn]{article}
+% \documentclass[12pt, onecolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{hyperref}
+% You can set the margine of the text by setting the top, bottom, left and right properties. Also, if using more than one columns, you can change the columnsep property to set the seperation space between two columns.
+\usepackage{listings}
+\usepackage[a4paper,top=30mm,bottom=30mm,columnsep=6mm,left=20mm,right=20mm]{geometry}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+% uncommnet and change the following two commands to set seperation line width between coulmns.
+
+% \setlength{\columnsep}{1cm}
+% \setlength{\columnseprule}{0.6pt}
+
+%########################## Paper Meta data#########################
+% You can change the variables in the following section to set them globally thrghout the whole paper.
+
+% Title of the paper
+\newcommand{\papertitle}{CO LAB 7 REPORT}
+\newcommand{\shorttitle}{PIPELINING IN VERILOG}
+
+% Full name of the author(s)
+\newcommand{\authorname}{Neeraj Krishna N (112101033)\\ Amithabh A (112101004)\\Evans Samuel Biju (112101017)}
+
+% Module code
+\newcommand{\acmodulecode}{CS2160}
+
+% Module name
+\newcommand{\acmodulename}{Computer Organisation Laboratory}
+
+% Name of the college
+\newcommand{\accollegename}{Computer Science And Engineering}
+
+% Date
+\newcommand{\wrdate}{2 May 2023}
+%########################## Paper Meta data#########################
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[L]{\textsc{\shorttitle}}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{\acmodulecode\  \textsc{\acmodulename}}
+% \fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.6pt}
+
+
+\title{\papertitle}
+\author{\authorname}
+
+\begin{document}
+\input{sections/titlepage}
+{
+  \hypersetup{linkcolor=black}
+  \tableofcontents
+}
+% {
+%   \hypersetup{hidelinks}
+%   \tableofcontents
+% }
+% \tableofcontents
+\clearpage
+
+\input{sections/introduction}
+
+\input{sections/solution.tex}
+% \clearpage
+% \input{sections/relatedwork}
+\input{sections/timing_diagrams.tex}
+
+% \input{sections/discussion}
+
+\input{sections/conclusion}
+
+\input{sections/contributions.tex}
+\includepdf[pages={1}]{PIPELINE_LAB_7_SCHEMATIC_LANDSCAPE}\label{schematic}
+
+\input{sections/code.tex}
+
+% \input{sections/bibpage}
+
+\end{document}
