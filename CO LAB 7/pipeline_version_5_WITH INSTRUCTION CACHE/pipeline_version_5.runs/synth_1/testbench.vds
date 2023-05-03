@@ -1,0 +1,973 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue May  2 13:28:40 2023
+# Process ID: 1736
+# Current directory: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.runs/synth_1
+# Command line: vivado.exe -log testbench.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source testbench.tcl
+# Log file: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.runs/synth_1/testbench.vds
+# Journal file: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source testbench.tcl -notrace
+Command: synth_design -top testbench -part xc7z010clg400-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 8468 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 572.883 ; gain = 242.887
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'testbench' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:23]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:51]
+WARNING: [Synth 8-311] ignoring non-constant assignment in initial block [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:56]
+INFO: [Synth 8-6157] synthesizing module 'pipeline' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:23]
+	Parameter R_type bound to: 4'b1000 
+	Parameter I_type bound to: 4'b0100 
+	Parameter S_type bound to: 4'b0010 
+	Parameter L_type bound to: 4'b0001 
+	Parameter STAGE_1 bound to: 3'b001 
+	Parameter STAGE_2 bound to: 3'b010 
+	Parameter STAGE_3 bound to: 3'b011 
+	Parameter STAGE_4 bound to: 3'b100 
+	Parameter STAGE_5 bound to: 3'b101 
+INFO: [Synth 8-6157] synthesizing module 'decoder_with_clk' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:24]
+	Parameter R_type bound to: 4'b1000 
+	Parameter I_type bound to: 4'b0100 
+	Parameter S_type bound to: 4'b0010 
+	Parameter L_type bound to: 4'b0001 
+WARNING: [Synth 8-6090] variable 'rd' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:111]
+WARNING: [Synth 8-6090] variable 'rd' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:128]
+WARNING: [Synth 8-6090] variable 'rs1' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:129]
+WARNING: [Synth 8-567] referenced signal 'instruction' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:47]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_with_clk' (1#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:24]
+INFO: [Synth 8-6157] synthesizing module 'reg_file' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:22]
+INFO: [Synth 8-251] x10 is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:49]
+INFO: [Synth 8-251] x27 is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:50]
+INFO: [Synth 8-251] x28 is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:51]
+INFO: [Synth 8-251] x29 is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:52]
+INFO: [Synth 8-251] x30 is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:53]
+INFO: [Synth 8-226] default block is never used [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:65]
+INFO: [Synth 8-6155] done synthesizing module 'reg_file' (2#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v:22]
+INFO: [Synth 8-6157] synthesizing module 'alu_with_clk' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:216]
+	Parameter Eadd bound to: 3'b100 
+	Parameter Esub bound to: 3'b010 
+	Parameter Emul bound to: 3'b001 
+	Parameter Edefault bound to: 3'b000 
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:195]
+	Parameter Eadd bound to: 3'b100 
+	Parameter Esub bound to: 3'b010 
+	Parameter Emul bound to: 3'b001 
+	Parameter Edefault bound to: 3'b000 
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (3#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:195]
+INFO: [Synth 8-6157] synthesizing module 'cla32_adder' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:181]
+INFO: [Synth 8-6157] synthesizing module 'cla32' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:158]
+INFO: [Synth 8-6157] synthesizing module 'claAdder' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'claAdder' (4#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:124]
+INFO: [Synth 8-6155] done synthesizing module 'cla32' (5#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:158]
+INFO: [Synth 8-6155] done synthesizing module 'cla32_adder' (6#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:181]
+INFO: [Synth 8-6157] synthesizing module 'cla32_subtracter' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:185]
+INFO: [Synth 8-6155] done synthesizing module 'cla32_subtracter' (7#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:185]
+INFO: [Synth 8-6157] synthesizing module 'booth_multiplier' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:23]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:62]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:63]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:67]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:68]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:78]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:79]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:80]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:85]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:86]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:93]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:94]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:95]
+WARNING: [Synth 8-6090] variable 'accumulator' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:99]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:100]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:101]
+WARNING: [Synth 8-6090] variable 'A_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:105]
+WARNING: [Synth 8-6090] variable 'A_comp_complete' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:106]
+INFO: [Common 17-14] Message 'Synth 8-6090' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-6014] Unused sequential element A_complete_reg was removed.  [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:57]
+WARNING: [Synth 8-6014] Unused sequential element A_comp_complete_reg was removed.  [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:58]
+INFO: [Synth 8-6155] done synthesizing module 'booth_multiplier' (8#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:23]
+WARNING: [Synth 8-567] referenced signal 'enable' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'LH_from_add' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'overflow_add' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'LH_from_sub' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'overflow_sub' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'LH_from_mul' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+WARNING: [Synth 8-567] referenced signal 'UH_from_mul' should be on the sensitivity list [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:268]
+INFO: [Synth 8-6155] done synthesizing module 'alu_with_clk' (9#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:216]
+INFO: [Synth 8-251] instruction is  [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:154]
+INFO: [Synth 8-251] write value is  [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:266]
+INFO: [Synth 8-251] 0 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 1 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 2 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 3 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 4 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 5 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 6 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-251] 7 value is 32'bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:291]
+INFO: [Synth 8-6155] done synthesizing module 'pipeline' (10#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:23]
+WARNING: [Synth 8-85] always block has no event control specified [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:67]
+WARNING: [Synth 8-3848] Net instruction in module/entity testbench does not have driver. [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'testbench' (11#1) [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v:23]
+WARNING: [Synth 8-3331] design decoder_with_clk has unconnected port clk
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 646.449 ; gain = 316.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 646.449 ; gain = 316.453
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-2
+INFO: [Device 21-403] Loading part xc7z010clg400-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 646.449 ; gain = 316.453
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "enable" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-802] inferred FSM for state register 'stage_reg' in module 'pipeline'
+WARNING: [Synth 8-327] inferring latch for variable 'opcode_reg' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:59]
+WARNING: [Synth 8-327] inferring latch for variable 'rs2_reg' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:60]
+WARNING: [Synth 8-327] inferring latch for variable 'immediate_reg' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:61]
+WARNING: [Synth 8-327] inferring latch for variable 'risl_type_reg' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v:62]
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 STAGE_1 |                             0001 |                              001
+                 STAGE_2 |                             0010 |                              010
+                 STAGE_3 |                             0100 |                              011
+                 STAGE_4 |                             1000 |                              100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'stage_reg' using encoding 'one-hot' in module 'pipeline'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:09 . Memory (MB): peak = 827.242 ; gain = 497.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |booth_multiplier__GB0 |           1|     28125|
+|2     |booth_multiplier__GB1 |           1|     18573|
+|3     |booth_multiplier__GB2 |           1|     14400|
+|4     |booth_multiplier__GB3 |           1|     16904|
+|5     |alu_with_clk__GC0     |           1|       977|
+|6     |pipeline__GC0         |           1|     13251|
++------+----------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	  32 Input     64 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 31    
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
+	   3 Input      2 Bit       Adders := 31    
++---XORs : 
+	   2 Input      1 Bit         XORs := 112   
+	   3 Input      1 Bit         XORs := 16    
++---Registers : 
+	               64 Bit    Registers := 2     
+	               32 Bit    Registers := 59    
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 34    
+	   4 Input     32 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 111   
+	   3 Input     32 Bit        Muxes := 31    
+	   5 Input     32 Bit        Muxes := 2     
+	   6 Input     17 Bit        Muxes := 1     
+	   3 Input     12 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   4 Input      5 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 25    
+	   2 Input      1 Bit        Muxes := 80    
+	   3 Input      1 Bit        Muxes := 32    
+	   5 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module booth_multiplier 
+Detailed RTL Component Info : 
++---Adders : 
+	  32 Input     64 Bit       Adders := 1     
+	   3 Input     32 Bit       Adders := 31    
+	   3 Input      2 Bit       Adders := 31    
++---Registers : 
+	               64 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 34    
+Module control_unit 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      3 Bit        Muxes := 1     
+Module claAdder__1 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__2 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__3 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__4 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__5 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__6 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__7 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__15 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__14 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__13 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__12 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__11 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__10 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__9 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module claAdder__8 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 7     
+	   3 Input      1 Bit         XORs := 1     
+Module alu_with_clk 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 2     
+	   4 Input      1 Bit        Muxes := 1     
+Module decoder_with_clk 
+Detailed RTL Component Info : 
++---Muxes : 
+	   6 Input     17 Bit        Muxes := 1     
+	   3 Input     12 Bit        Muxes := 1     
+	   6 Input      5 Bit        Muxes := 2     
+	   6 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 1     
+Module reg_file 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 34    
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 109   
+	   3 Input     32 Bit        Muxes := 30    
+	   2 Input      1 Bit        Muxes := 79    
+	   3 Input      1 Bit        Muxes := 30    
+Module pipeline 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      5 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 25    
+	               12 Bit    Registers := 1     
+	                5 Bit    Registers := 2     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   5 Input     32 Bit        Muxes := 2     
+	   3 Input     32 Bit        Muxes := 1     
+	   4 Input      5 Bit        Muxes := 1     
+	   4 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 24    
+	   2 Input      1 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 2     
+	   5 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5580] Multithreading enabled for synth_design using a maximum of 2 processes.
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "CU/enable" won't be mapped to RAM because it is too sparse
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[31] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[31]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[31] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[31] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[30] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[30]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[30] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[30] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[29] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[29]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[29] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[29] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[28] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[28]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[28] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[28] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[27] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[27]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[27] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[27] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[26] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[26]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[26] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[26] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[25] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[25]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[25] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[25] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[24] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[24]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[24] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[24] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[23] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[23]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[23] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[23] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[22] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[22]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[22] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[22] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[21] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[21]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[21] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[21] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[20] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[20]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[20] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[20] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[19] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[19]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[19] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[19] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[18] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[18]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[18] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[18] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[17] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[17]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[17] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[17] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[16] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[16]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[16] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[16] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[15] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[15]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[15] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[15] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[14] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[14]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[14] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[14] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[13] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[13]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[13] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[13] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[12] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[12]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[12] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[12] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[11] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[11]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[11] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[11] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[10] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[10]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[10] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[10] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[9] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[9]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[9] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[9] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[8] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[8]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[8] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[8] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[7] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[7]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[7] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[7] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[6] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[6]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[6] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[6] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[5] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[5]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[5] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[5] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[4] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[4]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[4] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[4] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[3] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[3]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[3] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[3] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[2] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[2]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[2] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[2] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[1] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[1]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[1] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[1] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[0] with 1st driver pin 'ALUi_4/UH_inferred/UH_reg[0]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin UH[0] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net UH[0] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[31] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[31]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[31] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[31] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[30] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[30]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[30] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[30] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[29] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[29]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[29] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[29] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[28] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[28]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[28] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[28] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[27] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[27]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[27] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[27] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[26] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[26]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[26] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[26] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[25] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[25]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[25] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[25] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[24] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[24]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[24] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[24] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[23] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[23]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[23] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[23] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[22] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[22]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[22] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[22] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[21] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[21]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[21] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[21] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[20] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[20]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[20] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[20] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[19] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[19]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[19] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[19] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[18] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[18]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[18] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[18] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[17] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[17]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[17] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[17] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[16] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[16]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[16] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[16] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[15] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[15]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[15] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[15] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[14] with 1st driver pin 'ALUi_4/LH_inferred/LH_reg[14]' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin LH[14] with 2nd driver pin 'GND' [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[14] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[13] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[12] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[11] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[10] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[9] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[8] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[7] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[6] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[5] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[4] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[3] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[2] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[1] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net LH[0] is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net overflow is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:274]
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[31] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[32] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[33] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[34] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[35] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[36] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[37] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[38] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[39] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[40] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[41] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[42] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[43] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[44] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[45] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[46] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[47] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[48] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[49] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[50] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[51] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[52] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[53] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[54] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[55] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[56] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[57] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[58] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[59] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[60] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[61] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[62] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\accumulator_reg[63] )
+CRITICAL WARNING: [Synth 8-6858] multi-driven net flag is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v:53]
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][0]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][1]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][2]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][3]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][4]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][5]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][6]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][7]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][8]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][9]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][10]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][11]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][12]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][13]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][14]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][15]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][16]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][17]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][18]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][19]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][20]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][21]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][22]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][23]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][24]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][25]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][26]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][27]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][28]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][29]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3886] merging instance 'REGISTER_FILE/register_file_reg[0][30]' (FDE) to 'REGISTER_FILE/register_file_reg[0][31]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (REGISTER_FILE/\register_file_reg[0][31] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (enable_reg)
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\DECODER/opcode_reg[3] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][0]' (FDRE) to 'data_cache_reg[1][0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[1][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[0][0] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][1]' (FDRE) to 'data_cache_reg[1][1]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[1][1]' (FDRE) to 'data_cache_reg[0][1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][1] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][2]' (FDRE) to 'data_cache_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][2]' (FDRE) to 'data_cache_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][2]' (FDRE) to 'data_cache_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][2]' (FDRE) to 'data_cache_reg[3][2]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][2]' (FDRE) to 'data_cache_reg[2][2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[2][2] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[1][2]' (FDSE) to 'data_cache_reg[0][2]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[0][2] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][3]' (FDRE) to 'data_cache_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][3]' (FDRE) to 'data_cache_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][3]' (FDRE) to 'data_cache_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][3]' (FDRE) to 'data_cache_reg[3][3]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][3]' (FDRE) to 'data_cache_reg[2][3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[2][3] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[1][3]' (FDSE) to 'data_cache_reg[0][3]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[0][3] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][4]' (FDRE) to 'data_cache_reg[1][4]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[1][4]' (FDRE) to 'data_cache_reg[0][4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][4] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][5]' (FDRE) to 'data_cache_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][5]' (FDRE) to 'data_cache_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][5]' (FDRE) to 'data_cache_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][5]' (FDRE) to 'data_cache_reg[3][5]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][5]' (FDRE) to 'data_cache_reg[2][5]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[2][5] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[1][5]' (FDSE) to 'data_cache_reg[0][5]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[0][5] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][6]' (FDRE) to 'data_cache_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][6]' (FDRE) to 'data_cache_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][6]' (FDRE) to 'data_cache_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][6]' (FDRE) to 'data_cache_reg[3][6]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][6]' (FDRE) to 'data_cache_reg[2][6]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][6]' (FDRE) to 'data_cache_reg[0][6]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][6] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][7]' (FDRE) to 'data_cache_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][7]' (FDRE) to 'data_cache_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][7]' (FDRE) to 'data_cache_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][7]' (FDRE) to 'data_cache_reg[3][7]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][7]' (FDRE) to 'data_cache_reg[2][7]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][7]' (FDRE) to 'data_cache_reg[0][7]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][7] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][8]' (FDRE) to 'data_cache_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][8]' (FDRE) to 'data_cache_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][8]' (FDRE) to 'data_cache_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][8]' (FDRE) to 'data_cache_reg[3][8]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][8]' (FDRE) to 'data_cache_reg[2][8]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][8]' (FDRE) to 'data_cache_reg[0][8]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][8] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][9]' (FDRE) to 'data_cache_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][9]' (FDRE) to 'data_cache_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][9]' (FDRE) to 'data_cache_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][9]' (FDRE) to 'data_cache_reg[3][9]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][9]' (FDRE) to 'data_cache_reg[2][9]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][9]' (FDRE) to 'data_cache_reg[0][9]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][9] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][10]' (FDRE) to 'data_cache_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[6][10]' (FDRE) to 'data_cache_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[5][10]' (FDRE) to 'data_cache_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[4][10]' (FDRE) to 'data_cache_reg[3][10]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[3][10]' (FDRE) to 'data_cache_reg[2][10]'
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[2][10]' (FDRE) to 'data_cache_reg[0][10]'
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][10] )
+INFO: [Synth 8-3886] merging instance 'data_cache_reg[7][11]' (FDRE) to 'data_cache_reg[3][11]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][11] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][12] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][13] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][14] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][15] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\data_cache_reg[0][16] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\data_cache_reg[1][17] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:120]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:120]
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:51 . Memory (MB): peak = 827.242 ; gain = 497.246
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |booth_multiplier__GB0 |           1|     10482|
+|2     |booth_multiplier__GB1 |           1|      2053|
+|3     |booth_multiplier__GB2 |           1|       739|
+|4     |booth_multiplier__GB3 |           1|       312|
+|5     |pipeline__GC0         |           1|      5273|
++------+----------------------+------------+----------+
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:53 . Memory (MB): peak = 833.953 ; gain = 503.957
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |booth_multiplier__GB0 |           1|     10184|
+|2     |booth_multiplier__GB2 |           1|         8|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:54 . Memory (MB): peak = 833.953 ; gain = 503.957
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+----------------------+------------+----------+
+|      |RTL Partition         |Replication |Instances |
++------+----------------------+------------+----------+
+|1     |booth_multiplier__GB0 |           1|         0|
+|2     |booth_multiplier__GB2 |           1|         8|
++------+----------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 204 critical warnings and 279 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+Synthesis Optimization Complete : Time (s): cpu = 00:00:28 ; elapsed = 00:00:58 . Memory (MB): peak = 833.965 ; gain = 503.969
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 834.039 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 930.258 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+255 Infos, 119 Warnings, 168 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:31 ; elapsed = 00:01:02 . Memory (MB): peak = 930.258 ; gain = 625.105
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 930.258 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.runs/synth_1/testbench.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file testbench_utilization_synth.rpt -pb testbench_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue May  2 13:29:51 2023...

@@ -1,0 +1,10 @@
+0.6
+2019.2
+Nov  6 2019
+21:57:16
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v,1683012726,verilog,,C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v,,alu_with_clk;booth_multiplier;cla32;cla32_adder;cla32_subtracter;claAdder;control_unit,,,,,,,,
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v,1682445583,verilog,,C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v,,decoder_with_clk,,,,,,,,
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v,1683014708,verilog,,C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v,,pipeline,,,,,,,,
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v,1682511066,verilog,,C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v,,reg_file,,,,,,,,
+C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v,1683013282,verilog,,,,testbench,,,,,,,,

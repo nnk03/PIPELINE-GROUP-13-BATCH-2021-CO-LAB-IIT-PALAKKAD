@@ -1,0 +1,17 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/alu_with_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module booth_multiplier
+INFO: [VRFC 10-311] analyzing module claAdder
+INFO: [VRFC 10-311] analyzing module cla32
+INFO: [VRFC 10-311] analyzing module cla32_adder
+INFO: [VRFC 10-311] analyzing module cla32_subtracter
+INFO: [VRFC 10-311] analyzing module control_unit
+INFO: [VRFC 10-311] analyzing module alu_with_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decoder_with_clk
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-2458] undeclared symbol overflow_wire, assumed default net type wire [C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/pipeline.v:69]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/reg_file.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module reg_file
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

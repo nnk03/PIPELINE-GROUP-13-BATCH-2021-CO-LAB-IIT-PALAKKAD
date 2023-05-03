@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../pipeline_version_5.srcs/sources_1/new/alu_with_clk.v" \
+"../../../../pipeline_version_5.srcs/sources_1/new/decoder_with_clk.v" \
+"../../../../pipeline_version_5.srcs/sources_1/new/pipeline.v" \
+"../../../../pipeline_version_5.srcs/sources_1/new/reg_file.v" \
+"../../../../pipeline_version_5.srcs/sources_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

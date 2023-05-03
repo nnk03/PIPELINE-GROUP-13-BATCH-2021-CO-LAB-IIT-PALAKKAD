@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Webtalk v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Tue May  2 13:04:17 2023
+# Process ID: 14356
+# Current directory: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/student/COALAB/112101033_LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.sim/sim_1/behav/xsim\webtalk.jou
+#-----------------------------------------------------------
+source C:/Users/student/COALAB/112101033_LAB -notrace
+couldn't read file "C:/Users/student/COALAB/112101033_LAB": no such file or directory
+INFO: [Common 17-206] Exiting Webtalk at Tue May  2 13:04:17 2023...
