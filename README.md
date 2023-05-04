@@ -6,3 +6,5 @@ by Group 13: Neeraj Krishna N ([@nnk03](https://github.com/nnk03)), Amithabh A (
 The source code for all the modules can be found [here](./CO%20LAB%207/pipeline_version_5_WITH%20INSTRUCTION%20CACHE/pipeline_version_5.srcs/sources_1/new/)
 
 The report of Lab 7 can be found [here](./CO%20LAB%207%20REPORT_112101004_112101017_112101033.pdf)
+
+The variable names in the modules are self-descriptive.
