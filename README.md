@@ -3,7 +3,9 @@
 This is a complete pipeline created using **Verilog** as a part of the Course Lab CS2160: COMPUTER ORGANISATION LABORATORY
 by Group 13: Neeraj Krishna N ([@nnk03](https://github.com/nnk03)), Amithabh A ([@Amithabh-A](https://github.com/Amithabh-A)), Evans Samuel Biju ([@Evans-7](https://github.com/Evans-7))
 
-The source code for all the modules can be found [here](./CO%20LAB%207/pipeline_version_5_WITH%20INSTRUCTION%20CACHE/pipeline_version_5.srcs/sources_1/new/)
+The source code for all the modules (as a '.v' file) can be found [here](./CO%20LAB%207/pipeline_version_5_WITH%20INSTRUCTION%20CACHE/pipeline_version_5.srcs/sources_1/new/)
+
+i.e. "CO LAB 7/pipeline_version_5_WITH INSTRUCTION CACHE/pipeline_version_5.srcs/sources_1/new/"
 
 The source code as text files can be found in the current folder as [pipeline.txt](./pipeline.txt) and [testbench.txt](./testbench.txt)
 
