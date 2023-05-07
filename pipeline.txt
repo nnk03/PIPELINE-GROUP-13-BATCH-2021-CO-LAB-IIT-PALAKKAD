@@ -1,0 +1,811 @@
+// Code your design here
+
+
+module pipeline(
+    input [255:0] instruction,
+    input clk, rst,
+    output reg [31:0] rv1, rv2, imm, ans_from_alu,current_instruction,
+    output reg [3:0] risl_type_register
+    );
+    reg [31:0] pipeline_1;
+    reg [31:0] pipeline_2 [2:0];
+    reg [31:0] pipeline_3 [1:0];
+    wire [16:0] opcode_wire;
+    wire [4:0] rs1_wire, rs2_wire, rd_wire;
+    reg [4:0] destination_register;
+    wire [11:0] immediate_wire;
+    wire [3:0] risl_type_wire;    
+    
+    parameter [3:0]
+    R_type = 4'b1000,
+    I_type = 4'b0100,
+    S_type = 4'b0010,
+    L_type = 4'b0001;
+    reg [31:0] data_cache [7:0];
+    
+    
+    
+    
+    decoder_with_clk DECODER(pipeline_1,clk,  opcode_wire, rs1_wire, rs2_wire, rd_wire, immediate_wire, risl_type_wire);
+    
+    reg [4:0] rs1, rs2, rd;
+    reg enable_write, enable;
+    reg [31:0] write_value;
+    wire [31:0] read_value_1_wire, read_value_2_wire;
+    always @ (posedge clk)
+    begin 
+    enable <= 1'b1;
+    end
+    
+//    reg_file REGISTER_FILE(rs1_wire, rs2_wire, rd_wire, enable_write, write_value, clk, rst, enable, read_value_1_wire, read_value_2_wire);
+      reg_file REGISTER_FILE(rs1_wire, rs2_wire, destination_register , enable_write, write_value, clk, rst, enable, read_value_1_wire, read_value_2_wire);
+
+    
+    reg [31:0] A, B;
+    wire [31:0] UH_wire, LH_wire;
+    wire overflow;
+    reg [4:0] data_cache_address;
+    
+    
+    alu_with_clk ALU(A, B, opcode_wire, clk, UH_wire, LH_wire, overflow_wire);
+    
+//    always @
+//    reg store_instruction;
+//    reg load_instruction;
+    reg [1:0] load_store;
+    
+    
+    parameter [2:0]
+    STAGE_1 = 3'd1,
+    STAGE_2 = 3'd2,
+    STAGE_3 = 3'd3,
+    STAGE_4 = 3'd4;
+    
+    reg [2:0] stage;
+    
+    always @ (posedge clk) begin
+        rv1 <= read_value_1_wire;
+        rv2 <= read_value_2_wire;
+        imm <= immediate_wire;
+        ans_from_alu <= LH_wire;
+        risl_type_register <= risl_type_wire;
+        
+        
+    
+    end
+    
+    always @ (posedge clk) begin
+        case(risl_type_wire)
+        S_type: load_store = 2'b01;
+        L_type: load_store = 2'b10;
+        default: load_store = 2'b00;
+            
+        
+        endcase
+    
+    
+    end
+    
+    reg [31:0] instruction_cache [7:0];
+    reg [3:0] program_counter;
+    
+    
+    
+    reg [31:0] temp;
+    integer i;
+    always @ (posedge clk) begin
+        if (rst) begin
+            stage = 3'd1;
+            for (i=0;i<8;i=i+1) data_cache[i] = 32'h0; 
+            load_store = 2'b0;
+            data_cache[0] = 45;
+            data_cache[1] = -20;
+            program_counter = 4'b0;
+            for (i=0;i<8;i = i + 1) instruction_cache[i] = 32'h0;
+            instruction_cache[0] = instruction[31:0];
+            instruction_cache[1] = instruction[63:32];
+            instruction_cache[2] = instruction[95:64];
+            instruction_cache[3] = instruction[127:96];
+            instruction_cache[4] = instruction[159:128];
+            instruction_cache[5] = instruction[191:160];
+            instruction_cache[6] = instruction[223:192];
+            instruction_cache[7] = instruction[255:224];
+//            for(i=0; i<8; i=i+1) $display("INSTRUCTION FROM PIPELINE IS ", instruction_cache[i]);
+        
+        end
+        else begin
+        
+            case(stage)
+                STAGE_1: begin
+                    if(program_counter == 9) begin
+                        stage = STAGE_1;
+                        pipeline_1 = 32'h0;
+                    end
+                
+                else begin
+                
+//                    pipeline_1 = instruction[31: 0];
+                    pipeline_1 = instruction_cache[program_counter];
+                    current_instruction = pipeline_1;
+                    program_counter = program_counter + 1;
+                    enable_write = 1'b0;
+//                    pipeline_1 = instruction;
+                    data_cache_address = 5'h0;
+                    $display("instruction is ",pipeline_1);
+    //                $display("first cycle");
+                    stage = STAGE_2;
+                end
+                
+                
+                end
+                STAGE_2: begin
+                // waiting for output from decoder
+//                $display("second cycle");
+//                $display("output from decoder is, %b %d %d %d %d %b", opcode_wire, rs1_wire, rs2_wire, rd_wire, immediate_wire, risl_type_wire);
+                enable_write = 1'b0;
+//                A = read_value_1_wire;
+////                B = read_value_2_wire;
+//                case(risl_type_wire)
+//                    R_type: B = read_value_2_wire;
+//                    I_type: begin
+//                            if (~immediate_wire[11]) B = {20'b0, immediate_wire};
+//                            else B = {20'hfffff, immediate_wire};
+//                    end
+//                    default: B = 32'b0;
+                    
+                    
+//                endcase
+
+                stage = STAGE_3;
+//                $display("A and B are    ",A, B);
+                
+                end
+                STAGE_3: begin
+                A = read_value_1_wire;
+//                $display(" A is ", A);
+//                B = read_value_2_wire;
+                case(risl_type_wire)
+                    R_type: 
+                    begin
+                    B = read_value_2_wire;
+                    destination_register = rd_wire;
+                    end
+                    I_type: begin
+                    
+                            destination_register = rd_wire;
+                            if (~immediate_wire[11]) B = {20'b0, immediate_wire};
+                            else B = {20'hfffff, immediate_wire};
+                            
+                    end
+                    S_type:begin
+                    
+                        destination_register = rd_wire;
+                        temp = read_value_2_wire;
+                        
+                        
+                        if (~immediate_wire[11]) B = {20'b0, immediate_wire};
+                            else B = {20'hfffff, immediate_wire};
+//                        $display(" A and B for store instruction are ", A, B);
+//                        $display("rv1 is ", read_value_1_wire);
+                        
+                        
+                        data_cache_address = B + temp;
+//                        $display("dca is ..........",data_cache_address);
+                    
+                    end
+                    L_type:
+                    begin
+                        temp = read_value_1_wire;
+                        if (~immediate_wire[11]) B = {20'b0, immediate_wire};
+                            else B = {20'hfffff, immediate_wire};
+                        
+                    
+                    end
+                    
+                    
+                    default: 
+                    begin
+                    B = 32'b0;
+                    destination_register = rd_wire;
+                    
+                    end
+                    
+                    
+                    
+                endcase
+//                $display("A and B are    ",A, B);
+                    stage = STAGE_4;
+//                    enable_write = 1'b1;
+////                    $display("output from decoder in the third cycle is ", opcode_wire, rs1_wire, rs2_wire, rd_wire, immediate_wire, read_value_1_wire, read_value_2_wire, risl_type_wire);
+//                    write_value = LH_wire;
+////                    $display("lh wire in third cycle is ", LH_wire);
+////                    $display("write value is ",write_value);
+////                    $display("rd wire, enable write, write value are ", rd_wire, enable_write, write_value);
+//                    stage = STAGE_1;
+                
+                
+                end
+                STAGE_4: begin
+//                $display("LH wire in 4th cycle is ",LH_wire);
+//                            enable_write = 1'b1;
+//                    $display("output from decoder in the third cycle is ", opcode_wire, rs1_wire, rs2_wire, rd_wire, immediate_wire, read_value_1_wire, read_value_2_wire, risl_type_wire);
+//                    write_value = LH_wire;
+//                    $display("lh wire in third cycle is ", LH_wire);
+//                    $display("write value is ",write_value);
+//                    $display("rd wire, enable write, write value are ", rd_wire, enable_write, write_value);
+                    
+                    
+                    case(load_store)
+                        2'b10:begin
+                        // load instruction
+                        enable_write = 1'b1;
+                        // lh wire from alu is the address from where we have to take the value from data cache and place it in destination register
+                        destination_register = rd_wire;
+                        write_value = data_cache[temp+B];
+//                        $display("temp+B and LH_wire is %d %d", temp+B, LH_wire); 
+                        $display("write value is ", write_value);
+                        
+                        
+                        end
+                        2'b01:
+                        begin
+                        //store instruction
+//                        enable_write = 1'b1;
+                        enable_write = 1'b0;
+//                        write_value
+                        // address is in lh wire, we have to write the read data from register file to data cache[lh wire]
+                        data_cache[data_cache_address] = A;                        
+                        
+                        end
+                        default:
+                        begin
+                            enable_write = 1'b1;
+                            write_value = LH_wire;
+                            
+                        
+                        end
+                        
+                        
+                    endcase
+                    stage = STAGE_1;
+                    for (i=0;i<8;i=i+1) $display("%d value is %b",i, data_cache[i]);
+                    
+                
+                
+                end
+                
+                default: begin
+                end
+            
+            
+            
+            endcase
+        
+        
+        
+        
+        
+        end
+    end
+    
+    
+
+    
+    
+    
+    
+    
+    
+endmodule
+
+
+
+module decoder_with_clk(
+    input [31:0] instruction,
+    input clk,
+    output reg [16:0] opcode,
+    output reg [4:0] rs1,
+    output reg [4:0] rs2,
+    output reg [4:0] rd,
+    output reg [11:0] immediate,
+    output reg [3:0] risl_type
+    // ri type is an indicator of whether it is r-type or i-type
+    
+);
+// if instruction is r-type, ri_type=10, if i-type, ri_type = 01, if invalid, ri_type = 00
+
+parameter [3:0]
+R_type = 4'b1000,
+I_type = 4'b0100,
+S_type = 4'b0010,
+L_type = 4'b0001;
+
+
+//always @ (posedge clk, negedge clk)
+
+always @(clk)
+//always @ (instruction)
+begin
+//$display("received instruction is ", instruction);
+//opcode <= {instruction[6:0]};
+rd = instruction[11:7];
+rs1 = instruction[19:15];
+//in both r type and i type these are the same
+case (instruction[6:0])
+//when opcode is 0110011, it is R-Type
+7'b0110011:
+begin
+opcode <= {instruction[31:25],instruction[14:12], instruction[6:0]};
+rs2 <= instruction[24:20];
+immediate <= 12'b0;
+risl_type <= R_type;
+
+end
+
+// when opcode is 00000111 or 0010011 or 1100111, it is I-type
+7'b0000011:
+begin
+opcode = {7'b0,instruction[14:12], instruction[6:0]};
+
+immediate = instruction[31:20];
+rs2 = 5'b0;
+risl_type = I_type;
+    // for load instruction
+    case(instruction[14:12])
+        3'b010: begin
+            risl_type = L_type;
+            
+        end
+        default:begin
+        
+        end
+        
+        
+    endcase
+
+
+
+end
+  7'b0010011:
+begin
+opcode <= {7'b0,instruction[14:12], instruction[6:0]};
+
+immediate <= instruction[31:20];
+rs2 <= 5'b0;
+risl_type <= I_type;
+
+end
+  7'b1100111:
+begin
+opcode <= {7'b0,instruction[14:12], instruction[6:0]};
+
+immediate <= instruction[31:20];
+rs2 <= 5'b0;
+risl_type <= I_type;
+
+end
+
+// S_type if opcode is 0100011
+7'b0100011: begin
+    rd <= 5'b0;
+    opcode <= {7'b0,instruction[14:12], instruction[6:0]};
+
+    immediate <= {instruction[31:25], instruction[11:7]};
+    rs2 <= instruction[24:20];
+    risl_type <= S_type;
+
+end
+
+
+// invalid opcode
+  default:
+begin
+opcode <= 17'b0;
+immediate <= 0;
+rs2 <=0;
+risl_type <= 2'b00;
+rd <= 0;
+rs1 <= 0;
+
+end
+
+
+endcase
+//$display("from decoder ",opcode, rs1, rs2, rd, immediate); 
+end
+  endmodule
+
+
+
+module reg_file(
+//    input [31:0] instruction,
+    input [4:0] rs1,
+    input [4:0] rs2,
+    input [4:0] rd,
+//    input enable_read,
+    input enable_write,
+    input [31:0] write_value,
+    input clk,
+    input rst,
+    input enable,
+    
+    
+    output reg [31:0] read_value_1,
+    output reg [31:0] read_value_2
+    );
+    reg [31:0] register_file [31:0];
+//    always @ (rs1 or rs2 or rd or enable_write)
+//    begin
+//    end
+    
+    integer i;
+    always @(posedge clk)
+    begin
+        if(enable == 1)
+        begin
+            $display("");
+            $display("x10 is %b ", register_file[10]);
+            $display("x27 is %b", register_file[27]);
+            $display("x28 is %b", register_file[28]);
+            $display("x29 is %b" , register_file[29]);
+            $display("x30 is %b", register_file[30]);
+            $display("");
+            if(rst)
+            begin
+                for(i=0;i<32;i = i+1)
+                begin
+                    register_file[i] = 32'h0;
+                end
+            end
+            
+            else
+            begin
+                case(enable_write)
+                // if enable_write is 1
+                    1'b1:
+                    begin
+                        
+                        case(rd)
+                        //if address is zero write will not happen since x0 hardcoded to zero
+                            5'b0:
+                            begin
+                                read_value_1 <= 32'h0;
+                                read_value_2 <= 32'h0;
+                            end
+                            
+                            //any address other than 0
+                            default:
+                            begin
+                                read_value_1 <= 32'h0;
+                                read_value_2 <= 32'h0;
+                                register_file[rd] <= write_value;
+                            end
+                        endcase
+                    end
+                    
+                    
+                    // if enable_write is 0
+                    1'b0:
+                    begin
+                        read_value_1 <= register_file[rs1];
+                        read_value_2 <= register_file[rs2];
+                    end
+                    default:
+                    begin
+                    
+                    end
+                 
+                
+                
+                
+                endcase
+            
+            end
+        
+        end
+        
+        else
+        // if register is not enabled,
+        // that is, enable input is 0
+        begin
+        
+        read_value_1 <= 32'b0;
+        read_value_2 <= 32'b0;
+        end
+    
+    end
+    
+    
+    
+endmodule
+
+
+module booth_multiplier(
+  input [31:0] A,
+  input [31:0] B,
+  input clk,
+  output reg [63:0] answer
+);
+  
+
+  
+  
+  reg [63:0] accumulator;
+  reg [63:0] A_complete;
+  reg [63:0] A_comp_complete;
+  reg flag;
+//   initial begin
+//     accumulator <= 64'b0;
+//     answer <= 64'b0;
+//     A_complete <= 64'b0;
+//     A_comp_complete <= 64'b0;
+//   end
+  integer i;
+//   always @ (A or B)
+  
+  always @ (A or B)
+    begin
+      flag = 1'b0;
+    end
+  
+  always @ (posedge clk)
+    begin
+      if(~flag)
+        begin
+      accumulator <= 64'b0;
+    answer <= 64'b0;
+    A_complete <= 64'b0;
+    A_comp_complete <= 64'b0;
+//       accumulator <=64'b0;
+          if (~A[31])
+            begin
+              A_complete = {32'b0,A};
+              A_comp_complete = {32'hffffffff,-A};
+            end
+          else
+            begin
+              A_complete ={32'hffffffff,A};
+              A_comp_complete = {32'b0,-A};
+            end
+        
+      for (i=0;i<32;i = i+1)
+        begin
+//        $display(answer);
+          if(i==0)
+            begin
+              if (B[0])
+                begin
+                  accumulator = A_comp_complete;
+                  A_complete = A_complete << 1;
+                  A_comp_complete = A_comp_complete << 1;
+                  
+                end
+              else
+                begin
+                  A_complete = A_complete << 1;
+                  A_comp_complete = A_comp_complete << 1;
+                end
+            end
+          else
+            begin
+              if(B[i-1] - B[i] == 1)
+                begin
+                  accumulator = accumulator + A_complete;
+                  A_complete = A_complete << 1;
+                  A_comp_complete = A_comp_complete << 1;
+                end
+              else if (B[i-1] - B[i] == -1)
+                begin
+                  accumulator = accumulator + A_comp_complete;
+                  A_complete = A_complete << 1;
+                  A_comp_complete = A_comp_complete << 1;
+                end
+              else
+                begin
+                  A_complete = A_complete << 1;
+                  A_comp_complete = A_comp_complete << 1;
+                end
+            end
+          
+          answer <= accumulator;
+        end
+    end
+      else
+    begin
+//       answer <= accumulator;
+      flag = 1'b1;
+    end
+    end
+  
+    
+        
+  
+endmodule
+module claAdder(
+    input [3:0] x,
+    input [3:0] y,
+    input cin,
+    output [3:0] sum,
+    output cout,
+    output overflow
+    );
+  wire cneg1;
+    assign cneg1 = cin;
+    wire c0,c1,c2,c3,g0,g1,g2,g3,p0,p1,p2,p3;
+    assign c0 = x[0]&y[0] | x[0]&cin | y[0]&cin;
+    assign p0 = x[0]^y[0];
+    assign p1 = x[1]^y[1];
+    assign p2 = x[2]^y[2];
+    assign p3 = x[3]^y[3];
+    assign g0 = x[0] & y[0];
+    assign g1 = x[1] & y[1];
+    assign g2 = x[2] & y[2];
+    assign g3 = x[3] & y[3];
+    assign c1 = g1 | (p1&c0);
+    assign c2 = g2 | (p2&g1) | p2&p1&c0;
+    assign c3 = g3 | p3&c2 | p3&p2&g1 | p3&p2&p1&c0;
+    
+    assign overflow = c3^c2;
+    assign sum[0] = p0 ^ cneg1;
+    assign sum[1] = p1 ^ c0;
+    assign sum[2] = p2 ^ c1;
+    assign sum[3] = p3 ^ c2;
+    assign cout =  c3;
+endmodule
+
+
+
+module cla32(
+    input [31:0] A,
+    input [31:0] B,
+    output [31:0] C,
+    output overflow_from_module
+    );
+    wire [31:0] ans;
+    wire carry[7:0];
+    wire overflow [7:0];
+    claAdder cla1(A[3:0],B[3:0],0,ans[3:0],carry[0],overflow[0]);
+    claAdder cla2(A[7:4],B[7:4],carry[0],ans[7:4],carry[1],overflow[1]);
+    claAdder cla3(A[11:8],B[11:8],carry[1],ans[11:8],carry[2],overflow[2]);
+    claAdder cla4(A[15:12],B[15:12],carry[2],ans[15:12],carry[3],overflow[3]);
+    claAdder cla5(A[19:16],B[19:16],carry[3],ans[19:16],carry[4],overflow[4]);
+    claAdder cla6(A[23:20],B[23:20],carry[4],ans[23:20],carry[5],overflow[5]);
+    claAdder cla7(A[27:24],B[27:24],carry[5],ans[27:24],carry[6],overflow[6]);
+    claAdder cla8(A[31:28],B[31:28],carry[6],ans[31:28],carry[7],overflow[7]);
+    assign overflow_from_module = overflow[7];
+    assign C = ans;
+endmodule
+
+
+
+module cla32_adder(input [31:0] A,input [31:0] B, output [31:0] answer, output overflow);
+    cla32 ADDER(A,B,answer,overflow);
+endmodule
+
+module cla32_subtracter(input [31:0] A,input [31:0] B, output [31:0] answer, output overflow);
+    wire [31:0] B_complement;
+    assign B_complement = ~B + 1;
+    cla32 SUBTRACTER(A,B_complement, answer, overflow);
+endmodule
+
+
+
+
+
+module control_unit(input [16:0] opcode, output reg [2:0] enable);
+parameter [2:0]
+Eadd = 3'b100,
+Esub = 3'b010,
+Emul = 3'b001,
+Edefault = 3'b0;
+always @ (opcode)
+begin
+case(opcode)
+17'b00000000000110011: enable <= Eadd;
+17'b00000000000010011:enable <= Eadd;
+17'b01000000000110011: enable <= Esub;
+17'b00000010000110011: enable <= Emul;
+default: enable <= Edefault;
+endcase
+end
+endmodule
+
+
+
+
+module alu_with_clk(
+input [31:0] A,
+input [31:0] B,
+input [16:0] opcode,
+input clk,
+output reg [31:0] UH,
+output reg [31:0] LH,
+output reg overflow
+//output reg alu_clk_reg
+    );
+    
+    parameter [2:0]
+    Eadd = 3'b100,
+    Esub = 3'b010,
+    Emul = 3'b001,
+    Edefault = 3'b0;
+    
+    
+    
+    
+    wire alu_clk;
+//     reg change;
+//     clk_divider_32 clkdivider(clk,alu_clk);
+    
+    always @ (A or B or opcode)
+//    always @ (posedge clk)    
+    begin
+//    $display("a and b in alu are ", A, B);
+//    $display("opcode is ", opcode);
+//       change = 1'b0;
+   	 UH <= 32'b0;
+   	 LH <= 32'b0;
+   	 overflow <= 0;
+    end
+    
+    wire [2:0] enable;
+    control_unit CU(opcode,enable);
+    
+    wire [31:0] LH_from_add;
+    wire [31:0] LH_from_sub;
+    wire [31:0] LH_from_mul;
+    wire overflow_add,overflow_sub;
+    wire [31:0] UH_from_mul;
+    wire [63:0] mul_ans;
+    assign LH_from_mul = mul_ans[31:0];
+    assign UH_from_mul = mul_ans[63:32];
+    
+    cla32_adder ADD(A,B,LH_from_add,overflow_add);
+    cla32_subtracter SUB(A,B,LH_from_sub,overflow_sub);
+  booth_multiplier MUL(A,B,clk,mul_ans);
+  
+//  always @ (posedge clk, negedge clk)
+  always @ (clk)
+    
+    begin
+//    $display("a and b in alu are ", A, B);
+//       change = 0
+//       $display(enable);
+   	 case(enable)
+   	 Eadd:
+   	 begin
+   		 LH <= LH_from_add;
+   		 UH <= 32'b0;
+   		 overflow <= overflow_add;
+  	 
+   	 end
+   	 Esub:
+   	 begin
+   		 LH <= LH_from_sub;
+   		 UH <= 32'b0;
+   		 overflow <= overflow_sub;
+  	 
+   	 
+   	 end
+   	 Emul:
+   	 begin
+//        change = ~change;
+   		 LH <= LH_from_mul;
+   		 UH <= UH_from_mul;
+   		 overflow <= 1'b0;
+   	 end
+  	 
+  	 
+   	 default:
+   	 begin
+   	 UH <= 32'b0;
+   	 LH <= 32'b0;
+   	 overflow <= 32'b0;
+   	 end
+   	 endcase
+//   	 $display("output from alu is ", LH);
+   	 
+    end
+
+endmodule
+
